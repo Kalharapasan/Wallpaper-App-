@@ -13,7 +13,6 @@ class MyApp extends StatelessWidget {
       title: 'WALLPAPERHUB',
       theme: ThemeData(
         primaryColor: Colors.white,
-        
       ),
       home: Home(),
     );

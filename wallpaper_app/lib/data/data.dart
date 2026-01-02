@@ -1,56 +1,55 @@
 import 'package:wallpaper_app/model/categories_model.dart';
 
 List<CategoriesModel> getCategories() {
-  List<CategoriesModel> categories = <CategoriesModel>[];
-  CategoriesModel categoriesModel;
+  List<CategoriesModel> categories = [];
 
   // Street Art
-  categoriesModel = CategoriesModel();
-  categoriesModel.imgUrl = "https://images.pexels.com/photos/543888/pexels-photo-543888.jpeg";
-  categoriesModel.categoriesName = "Street Art";
-  categories.add(categoriesModel);
+  categories.add(CategoriesModel(
+    imgUrl: "https://images.pexels.com/photos/2119706/pexels-photo-2119706.jpeg",
+    categoriesName: "Street Art",
+  ));
 
   // Wild Life
-  categoriesModel = CategoriesModel();
-  categoriesModel.imgUrl = "https://images.pexels.com/photos/784329/pexels-photo-784320.jpeg";
-  categoriesModel.categoriesName = "Wild Life";
-  categories.add(categoriesModel);
+  categories.add(CategoriesModel(
+    imgUrl: "https://images.pexels.com/photos/625727/pexels-photo-625727.jpeg",
+    categoriesName: "Wild Life",
+  ));
 
   // Nature
-  categoriesModel = CategoriesModel();
-  categoriesModel.imgUrl = "https://images.pexels.com/photos/34589/pexels-photo-34589.jpeg";
-  categoriesModel.categoriesName = "Nature";
-  categories.add(categoriesModel);
+  categories.add(CategoriesModel(
+    imgUrl: "https://images.pexels.com/photos/1386604/pexels-photo-1386604.jpeg",
+    categoriesName: "Nature",
+  ));
 
   // City
-  categoriesModel = CategoriesModel();
-  categoriesModel.imgUrl = "https://images.pexels.com/photos/466659/pexels-photo-466659.jpeg";
-  categoriesModel.categoriesName = "City";
-  categories.add(categoriesModel);
+  categories.add(CategoriesModel(
+    imgUrl: "https://images.pexels.com/photos/378570/pexels-photo-378570.jpeg",
+    categoriesName: "City",
+  ));
 
   // Motivation
-  categoriesModel = CategoriesModel();
-  categoriesModel.imgUrl = "https://images.pexels.com/photos/1434819/pexels-photo-1434819.jpeg";
-  categoriesModel.categoriesName = "Motivation";
-  categories.add(categoriesModel);
+  categories.add(CategoriesModel(
+    imgUrl: "https://images.pexels.com/photos/3806690/pexels-photo-3806690.jpeg",
+    categoriesName: "Motivation",
+  ));
 
   // Bikes
-  categoriesModel = CategoriesModel();
-  categoriesModel.imgUrl = "https://images.pexels.com/photos/1154819/pexels-photo-1154819.jpeg";
-  categoriesModel.categoriesName = "Bikes";
-  categories.add(categoriesModel);
+  categories.add(CategoriesModel(
+    imgUrl: "https://images.pexels.com/photos/2549941/pexels-photo-2549941.jpeg",
+    categoriesName: "Bikes",
+  ));
 
   // Cars
-  categoriesModel = CategoriesModel();
-  categoriesModel.imgUrl = "https://images.pexels.com/photos/2115075/pexels-photo-2115075.jpeg";
-  categoriesModel.categoriesName = "Cars";
-  categories.add(categoriesModel);
+  categories.add(CategoriesModel(
+    imgUrl: "https://images.pexels.com/photos/305070/pexels-photo-305070.jpeg",
+    categoriesName: "Cars",
+  ));
 
   // Girls
-  categoriesModel = CategoriesModel();
-  categoriesModel.imgUrl = "https://images.pexels.com/photos/1149137/pexels-photo-1149137.jpeg";
-  categoriesModel.categoriesName = "Girls";
-  categories.add(categoriesModel);
+  categories.add(CategoriesModel(
+    imgUrl: "https://images.pexels.com/photos/514914/pexels-photo-514914.jpeg",
+    categoriesName: "Girls",
+  ));
 
   return categories;
 }
