@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wallpaper_app/widgets/widgets.dart';
 
 class Home extends StatefulWidget {
   
@@ -12,7 +13,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        
+        title: BrandName(),
       ),
     );
   }
