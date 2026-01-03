@@ -217,7 +217,7 @@ Potential features to add:
 - Download history
 - Wallpaper of the day
 
-## 📝 License
+## 📝 [License](./LICENSE.md): Proprietary – Permission Required
 
 This project is for educational purposes. Make sure to comply with Pexels API terms of service.
 
