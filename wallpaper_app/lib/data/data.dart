@@ -41,8 +41,18 @@ List<CategoriesModel> getCategories() {
   ));
 
   categories.add(CategoriesModel(
-    imgUrl: "https://images.pexels.com/photos/514914/pexels-photo-514914.jpeg",
-    categoriesName: "Girls",
+    imgUrl: "https://images.pexels.com/photos/1181391/pexels-photo-1181391.jpeg",
+    categoriesName: "Technology",
+  ));
+
+  categories.add(CategoriesModel(
+    imgUrl: "https://images.pexels.com/photos/356079/pexels-photo-356079.jpeg",
+    categoriesName: "Space",
+  ));
+
+  categories.add(CategoriesModel(
+    imgUrl: "https://images.pexels.com/photos/1566837/pexels-photo-1566837.jpeg",
+    categoriesName: "Ocean",
   ));
 
   return categories;
