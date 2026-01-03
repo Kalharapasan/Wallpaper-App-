@@ -90,7 +90,7 @@ class _CategorieViewState extends State<CategorieView> {
           },
         ),
         actions: [
-          Container(width: 48), // Balance for centered title
+          Container(width: 48), 
         ],
       ),
       body: SingleChildScrollView(
@@ -98,8 +98,6 @@ class _CategorieViewState extends State<CategorieView> {
           child: Column(
             children: <Widget>[
               const SizedBox(height: 16),
-
-              // Results info
               if (!isLoading && wallpapers.isNotEmpty)
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -128,8 +126,6 @@ class _CategorieViewState extends State<CategorieView> {
                 ),
 
               const SizedBox(height: 16),
-
-              // Wallpapers Grid
               isLoading
                   ? Container(
                       height: 400,

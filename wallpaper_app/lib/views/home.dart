@@ -86,7 +86,6 @@ class _HomeState extends State<Home> {
         child: Container(
           child: Column(
             children: <Widget>[
-              // Search Bar
               Container(
                 decoration: BoxDecoration(
                   color: const Color(0xfff5f8fd),
@@ -140,8 +139,6 @@ class _HomeState extends State<Home> {
               ),
 
               const SizedBox(height: 16),
-
-              // Categories Section
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Row(
@@ -160,8 +157,6 @@ class _HomeState extends State<Home> {
               ),
 
               const SizedBox(height: 8),
-
-              // Categories List
               Container(
                 height: 80,
                 child: ListView.builder(
@@ -179,8 +174,6 @@ class _HomeState extends State<Home> {
               ),
 
               const SizedBox(height: 16),
-
-              // Trending Wallpapers Section
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Row(
@@ -209,7 +202,6 @@ class _HomeState extends State<Home> {
 
               const SizedBox(height: 16),
 
-              // Wallpapers Grid
               isLoading
                   ? Container(
                       height: 400,

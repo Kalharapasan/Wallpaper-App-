@@ -22,38 +22,29 @@ class _ImageViewState extends State<ImageView> {
   bool _isDownloading = false;
   bool _isSettingWallpaper = false;
 
-  // Download image to gallery
   Future<void> _downloadImage() async {
     setState(() {
       _isDownloading = true;
     });
 
     try {
-      // Request storage permission
       var status = await Permission.storage.status;
       if (!status.isGranted) {
         status = await Permission.storage.request();
       }
-
-      // For Android 13+ (API 33+), use photos permission
       if (Platform.isAndroid) {
         var photosStatus = await Permission.photos.status;
         if (!photosStatus.isGranted) {
           photosStatus = await Permission.photos.request();
         }
       }
-
-      // Download the image
       var response = await http.get(Uri.parse(widget.imgUrl));
       
       if (response.statusCode == 200) {
-        // Save image temporarily
         final tempDir = await getTemporaryDirectory();
         final fileName = 'wallpaper_${DateTime.now().millisecondsSinceEpoch}.jpg';
         final file = File('${tempDir.path}/$fileName');
         await file.writeAsBytes(response.bodyBytes);
-        
-        // Save to gallery
         await Gal.putImage(file.path);
 
         setState(() {
@@ -75,18 +66,13 @@ class _ImageViewState extends State<ImageView> {
       _showSnackBar("Error downloading wallpaper: $e", Colors.red);
     }
   }
-
-  // Set wallpaper
   Future<void> _setWallpaper(int location) async {
     setState(() {
       _isSettingWallpaper = true;
     });
 
     try {
-      // Cache the image first
       var file = await DefaultCacheManager().getSingleFile(widget.imgUrl);
-      
-      // Set wallpaper
       bool result = await WallpaperManager.setWallpaperFromFile(
         file.path,
         location,
@@ -114,8 +100,6 @@ class _ImageViewState extends State<ImageView> {
       _showSnackBar("Error setting wallpaper: $e", Colors.red);
     }
   }
-
-  // Show wallpaper options dialog
   void _showWallpaperOptions() {
     showModalBottomSheet(
       context: context,
@@ -184,7 +168,6 @@ class _ImageViewState extends State<ImageView> {
       backgroundColor: Colors.black,
       body: Stack(
         children: [
-          // Full screen image
           Hero(
             tag: widget.imgUrl,
             child: SizedBox(
@@ -208,8 +191,6 @@ class _ImageViewState extends State<ImageView> {
               ),
             ),
           ),
-
-          // Top gradient with back button
           Positioned(
             top: 0,
             left: 0,
@@ -249,13 +230,11 @@ class _ImageViewState extends State<ImageView> {
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
-                  const SizedBox(width: 48), // Balance the back button
+                  const SizedBox(width: 48), 
                 ],
               ),
             ),
           ),
-
-          // Bottom action buttons
           Positioned(
             bottom: 0,
             left: 0,
@@ -280,7 +259,6 @@ class _ImageViewState extends State<ImageView> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  // Download button
                   Expanded(
                     child: ElevatedButton.icon(
                       onPressed: _isDownloading ? null : _downloadImage,
@@ -309,7 +287,6 @@ class _ImageViewState extends State<ImageView> {
                     ),
                   ),
                   const SizedBox(width: 10),
-                  // Set wallpaper button
                   Expanded(
                     child: ElevatedButton.icon(
                       onPressed: _isSettingWallpaper ? null : _showWallpaperOptions,

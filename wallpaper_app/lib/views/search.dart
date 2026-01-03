@@ -98,14 +98,14 @@ class _SearchViewState extends State<SearchView> {
           },
         ),
         actions: [
-          Container(width: 48), // Balance for centered title
+          Container(width: 48),
         ],
       ),
       body: SingleChildScrollView(
         child: Container(
           child: Column(
             children: <Widget>[
-              // Search Bar
+      
               Container(
                 decoration: BoxDecoration(
                   color: const Color(0xfff5f8fd),
@@ -144,7 +144,6 @@ class _SearchViewState extends State<SearchView> {
                 ),
               ),
 
-              // Results count
               if (!isLoading && wallpapers.isNotEmpty)
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -160,8 +159,6 @@ class _SearchViewState extends State<SearchView> {
                 ),
 
               const SizedBox(height: 16),
-
-              // Wallpapers Grid
               isLoading
                   ? Container(
                       height: 400,
